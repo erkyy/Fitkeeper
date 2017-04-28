@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>915841870100-bnltee6n14v7b3to07ba057eb2jko9h6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.915841870100-bnltee6n14v7b3to07ba057eb2jko9h6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAuvJyraKBM-Km-P4xqGK8rReIVjmv52xQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>915841870100</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.erik.Fitkeeper</string>
+	<key>PROJECT_ID</key>
+	<string>fitkeeper-af477</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fitkeeper-af477.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:915841870100:ios:4cc0cbcf4ac6cd2b</string>
+	<key>DATABASE_URL</key>
+	<string>https://fitkeeper-af477.firebaseio.com</string>
+</dict>
+</plist>
