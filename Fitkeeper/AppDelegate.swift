@@ -40,13 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if let err = error {
-                print("Error with Firebase", err)
+                print("Error with Firebase:", err)
                 return
             }
+            self.window?.rootViewController?.performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: self)
             guard let email = user?.email else { return }
-            self.window?.rootViewController?.performSegue(withIdentifier: "toMeVC", sender: self)
-            print("User did sign in with Google.")
-            print("User email: ", email)
+            print("User signed in with email: \(email)")
         })
     }
 }

@@ -47,6 +47,8 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                     self.createAlert(title: "Error", message: err.localizedDescription)
                     return
                 }
+                self.performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: self)
+                print("User signed in with email:", email)
             })
         }
     }
@@ -62,5 +64,12 @@ class LogInVC: UIViewController, UITextFieldDelegate {
     @IBAction func dismissPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let id = segue.identifier else {
+//            preconditionFailure("Segue should have a valid identifier")
+//        }
+        
+        
+    }
 }

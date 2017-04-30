@@ -18,25 +18,29 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+
+        textFieldSettings()
 
         setupGoogleButton()
-
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         guard let FirebaseUserEmail = FIRAuth.auth()?.currentUser?.email else { return }
+        
         if FIRAuth.auth()?.currentUser != nil {
-            print("User is signed in.")
-            print("User email: ", FirebaseUserEmail)
-            performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: self)
+            
+            performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: FirebaseUserEmail)
+            print("User is already signed in with email: \(FirebaseUserEmail)")
         }
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
         createUser()
+        if (emailTextField.text?.characters.count)! > 30 {
+            createAlert(title: "Error", message: "Email address is too long")
+        }
     }
 
     func createAlert(title: String, message: String) {
@@ -53,14 +57,16 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
         googleSignInButton.style = .wide
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField { passwordTextField.becomeFirstResponder() }
-        else { createUser() }
-        return true
+    func textFieldSettings() {
+            emailTextField.delegate = self
+            passwordTextField.delegate = self
+        
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField == emailTextField { passwordTextField.becomeFirstResponder() }
+            else { createUser() }
+            return true
+        }
     }
 
     func createUser() {
@@ -70,29 +76,20 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                     self.createAlert(title: "Error", message: createUserError.localizedDescription)
                     return
                 }
-                self.performSegue(withIdentifier: "toMeVC", sender: self)
-                print("User did sign up.")
-                print("User email: ", email)
+                self.performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: email)
+                print("User signed up with email:", email)
             })
         }
     }
 
     @IBAction func userHasAccountPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toLogInVC", sender: self)
+        performSegue(withIdentifier: SegueIdentifier.toLogInVC, sender: self)
     }
 
     //Here is how you pass data between VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let id = segue.identifier else {
-            preconditionFailure("Segue should have a valid identifier")
-        }
-
-        if id == SegueIdentifier.toMeVC {
-            guard let newVC = segue.destination as? MeVC, let username = FIRAuth.auth()?.currentUser?.email else {
-                print("Invalid Target VC")
-                return
-            }
-            newVC.userName = username
-        }
+        
+        
+        
     }
 }
