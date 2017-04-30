@@ -37,8 +37,9 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
-        createUser()
-        if (emailTextField.text?.characters.count)! > 30 {
+        if (emailTextField.text?.characters.count)! < 30 {
+            createUser()
+        } else {
             createAlert(title: "Error", message: "Email address is too long")
         }
     }
