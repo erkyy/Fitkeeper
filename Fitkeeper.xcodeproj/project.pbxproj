@@ -27,6 +27,7 @@
 		7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		7C9C22FF1EB5DB9B00D8C5D2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		7C9C23011EB607C700D8C5D2 /* UserPhotoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotoImageView.swift; sourceTree = "<group>"; };
+		7C9C23051EB615E800D8C5D2 /* Fitkeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fitkeeper-Bridging-Header.h"; sourceTree = "<group>"; };
 		7CD6DF581EB0A274005F3FE4 /* Fitkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD6DF5B1EB0A274005F3FE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CD6DF601EB0A274005F3FE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,12 +112,13 @@
 				7C9C22FD1EB5DB7500D8C5D2 /* View */,
 				7C9C22FE1EB5DB7A00D8C5D2 /* Controller */,
 				7CD6DF5B1EB0A274005F3FE4 /* AppDelegate.swift */,
+				49D6A2B01EB22A450016FCCE /* Identifiers.swift */,
 				7CD6DF6F1EB0A392005F3FE4 /* WelcomeVC.swift */,
 				7CD6DF711EB0A3A8005F3FE4 /* LogInVC.swift */,
 				7CD6DF751EB0A3BC005F3FE4 /* MeVC.swift */,
-				49D6A2B01EB22A450016FCCE /* Identifiers.swift */,
-				7CD6DF5F1EB0A274005F3FE4 /* Main.storyboard */,
 				7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */,
+				7C9C23051EB615E800D8C5D2 /* Fitkeeper-Bridging-Header.h */,
+				7CD6DF5F1EB0A274005F3FE4 /* Main.storyboard */,
 				7CD6DF621EB0A274005F3FE4 /* Assets.xcassets */,
 				7CD6DF641EB0A274005F3FE4 /* LaunchScreen.storyboard */,
 				7CD6DF6D1EB0A36D005F3FE4 /* GoogleService-Info.plist */,
@@ -169,6 +171,7 @@
 					7CD6DF571EB0A273005F3FE4 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2G79FANPK5;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -387,11 +390,14 @@
 			baseConfigurationReference = C9416FEA4F2CA10BB29CE839 /* Pods-Fitkeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2G79FANPK5;
 				INFOPLIST_FILE = Fitkeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erik.Fitkeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fitkeeper/Fitkeeper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -402,11 +408,13 @@
 			baseConfigurationReference = A932A4086E0803BB4A751252 /* Pods-Fitkeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2G79FANPK5;
 				INFOPLIST_FILE = Fitkeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.erik.Fitkeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fitkeeper/Fitkeeper-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

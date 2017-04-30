@@ -19,8 +19,6 @@ class MeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         setupUserImage()
         setupUserEmailLbl()
     }
@@ -34,19 +32,10 @@ class MeVC: UIViewController {
         print("User photo URL: \(firebaseUserPhotoURL)")
         
         if FIRAuth.auth()?.currentUser?.photoURL != nil {
-            print("starting to load")
-            activityIndicator.startAnimating()
-            userPhotoImgView.alpha = 0.5
-            DispatchQueue.global().async {
-                do {
-                    let data = try Data(contentsOf: firebaseUserPhotoURL)
-                    DispatchQueue.global().sync {
-                        self.userPhotoImgView.image = UIImage(data: data)
-                    }
-                } catch {
-                    print("Error")
-                }
-            }
+            
+            // TODO: The firebaseUserPhotoURL contains a https URL with the user image. Convert URL to Image and put it in userPhotoImgView.
+            
+            
         }
     }
     
