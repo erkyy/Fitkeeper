@@ -357,11 +357,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ybE-hF-OHF">
-                                <rect key="frame" x="59" y="115" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -387,7 +382,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="ybE-hF-OHF" id="Wn8-fG-2cW"/>
                         <outlet property="userEmailLbl" destination="yjO-Sw-zZl" id="CSQ-yW-nWK"/>
                         <outlet property="userPhotoImgView" destination="nYR-1H-lAd" id="sII-Uy-MKp"/>
                     </connections>
@@ -479,7 +473,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GeQ-e8-LZy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" id="tlc-z1-IMQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZyL-9U-T1j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZyL-9U-T1j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176470588238" green="0.47450980392156861" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
@@ -503,7 +497,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPs-aU-ge3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" selectedImage="profilepic-default-img" id="bXS-ko-UdC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aef-Yv-lqx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aef-Yv-lqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.47450980390000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -546,7 +540,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cpp-44-233" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" id="nOP-Zw-XUq"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8DS-1Y-uKE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8DS-1Y-uKE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.47450980390000003" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>

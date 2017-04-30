@@ -13,8 +13,6 @@ class MeVC: UIViewController {
 
     @IBOutlet weak var userEmailLbl: UILabel!
     @IBOutlet weak var userPhotoImgView: UIImageView!
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +23,7 @@ class MeVC: UIViewController {
     
     func setupUserImage() {
         guard let firebaseUserPhotoURL = FIRAuth.auth()?.currentUser?.photoURL else {
-            activityIndicator.isHidden = true
-            print("User has no photo.")
+            print("Nil: User has no photo.")
             return }
         
         print("User photo URL: \(firebaseUserPhotoURL)")
