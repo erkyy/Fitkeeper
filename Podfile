@@ -9,6 +9,7 @@ target 'Fitkeeper' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   pod 'GoogleSignIn'
 
   pod 'SDWebImage'

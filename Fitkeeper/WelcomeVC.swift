@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 import GoogleSignIn
 
 class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
@@ -77,6 +78,19 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                     self.createAlert(title: "Error", message: createUserError.localizedDescription)
                     return
                 }
+                
+                guard let uid = user?.uid else { return }
+                
+                let ref = FIRDatabase.database().reference(fromURL: "https://fitkeeper-af477.firebaseio.com/")
+                let usersRef = ref.child("Users").child(uid)
+                let values = ["email": email, "password": password]
+                usersRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    if err != nil {
+                        print("Error with Firebase Database: \(err)")
+                    }
+                    print("Saved user with ID: \(uid)")
+                })
+                
                 self.performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: email)
                 print("User signed up with email:", email)
             })

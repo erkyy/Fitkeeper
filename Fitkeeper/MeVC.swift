@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,6 +22,13 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         setupUserImage()
         setupUserEmailLbl()
         setupChangeProfilePictureButton()
+        
+        //In Firebase Database: If User UID has a child with photoURL: Set that URL to display in the image.
+        
+        let FirebaseUID = FIRAuth.auth()?.currentUser?.uid
+        let ref = FIRDatabase.database().reference(fromURL: "https://fitkeeper-af477.firebaseio.com/")
+        let usersRef = ref.child("Users").child(FirebaseUID!).child("photoURL")
+        
         
     }
     
@@ -45,13 +53,11 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     
     func changeProfilePictureMenu() {
         
-        
         let changePhotoAlert = UIAlertController(title: nil, message: "Change Profile Photo", preferredStyle: .actionSheet)
         
         let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { (action) in
-            let camera = UIImagePickerController()
-            camera.sourceType = .camera
-            self.present(camera, animated: true, completion: nil)
+            //TODO : Present camera
+            
         }
         
         let chooseFromLibrary = UIAlertAction(title: "Choose From Library", style: .default) { (action) in
@@ -76,32 +82,64 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         var selectedImageFromPicker: UIImage?
         
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            
             selectedImageFromPicker = editedImage
             dismiss(animated: true, completion: nil)
             
         } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
             selectedImageFromPicker = originalImage
             dismiss(animated: true, completion: nil)
-            
         }
         
         if let selectedImage = selectedImageFromPicker {
             userPhotoImgView.image = selectedImage
         }
         
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference().child("Profile-Photos").child("\(imageName).png")
+        
+        if let uploadData = UIImagePNGRepresentation(self.userPhotoImgView.image!) {
+            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print("Error DB Storage: \(error?.localizedDescription)")
+                    print("Error DB Storage Debug: \(error.debugDescription)")
+                }
+                
+                guard let downloadURL = metadata?.downloadURL() else { return }
+                let downloadURLStr = String(describing: downloadURL)
+                guard let FirebaseUID = FIRAuth.auth()?.currentUser?.uid else { return }
+                
+                let ref = FIRDatabase.database().reference(fromURL: "https://fitkeeper-af477.firebaseio.com/")
+                let usersRef = ref.child("Users").child(FirebaseUID)
+                let values = ["photoURL": downloadURLStr]
+                usersRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    if err != nil {
+                        print("Error with Firebase Database: \(err)")
+                    }
+                        DispatchQueue.global().async {
+                            let downloadURLData = try? Data(contentsOf: downloadURL)
+                            DispatchQueue.main.async {
+                                self.userPhotoImgView.image = UIImage(data: downloadURLData!)
+                            }
+                        }
+                })
+                
+                print("User: \(FirebaseUID)")
+                
+                print("User profile picture URL: \(downloadURL)")
+                
+                
+                
+            })
+        }
+        
     }
     
     func setupUserImage() {
         guard let firebaseUserPhotoURL = FIRAuth.auth()?.currentUser?.photoURL else {
-            print("Nil - User has no photo.")
+            print("User has no Google Photo.")
             return }
         
-        print("User photo URL: \(firebaseUserPhotoURL)")
-        
         if FIRAuth.auth()?.currentUser?.photoURL != nil {
-            print("User has a photo")
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: firebaseUserPhotoURL)
                 DispatchQueue.main.async {
