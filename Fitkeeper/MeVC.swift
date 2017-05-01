@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import RSKImageCropper
 
 class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -261,7 +262,7 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
                             }
                         }
                 })
-                print("User set profile picture. \(downloadURL)")
+                print("User set profile picture.")
             })
         }
     }
