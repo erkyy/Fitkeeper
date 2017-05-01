@@ -38,7 +38,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
-        if (emailTextField.text?.characters.count)! < 30 {
+        if (emailTextField.text?.characters.count)! <= 30 {
             createUser()
         } else {
             createAlert(title: "Error", message: "Email address is too long")
@@ -60,9 +60,11 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     }
 
     func textFieldSettings() {
-            emailTextField.delegate = self
-            passwordTextField.delegate = self
         
+        emailTextField.delegate = self
+        emailTextField.text = ""
+        passwordTextField.delegate = self
+        passwordTextField.text = ""
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             if textField == emailTextField { passwordTextField.becomeFirstResponder() }
@@ -80,15 +82,14 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
                 }
                 
                 guard let uid = user?.uid else { return }
-                
                 let ref = FIRDatabase.database().reference(fromURL: "https://fitkeeper-af477.firebaseio.com/")
                 let usersRef = ref.child("Users").child(uid)
+                
                 let values = ["email": email, "password": password]
                 usersRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
                     if err != nil {
                         print("Error with Firebase Database: \(err)")
                     }
-                    print("Saved user with ID: \(uid)")
                 })
                 
                 self.performSegue(withIdentifier: SegueIdentifier.toMeVC, sender: email)

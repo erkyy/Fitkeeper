@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>RSKImageCropper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,22 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>299CF8942184E216EC303FA36B123B20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9E4C49F5F97CE0B2D4D0285944989C6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CAB3C36A76D04AB18910E58EE19F4004</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D2270FCFA50A5A974FFE5BC4FEE0BC72</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -61,6 +61,43 @@ class LogInVC: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func forgotPasswordPressed(_ sender: Any) {
+        setupForgotPasswordView()
+    }
+    
+    func setupForgotPasswordView() {
+        let alertController = UIAlertController(title: "Forgot Password", message: "Enter your email.", preferredStyle: .alert)
+        
+        alertController.addTextField { (userEmailTextField) in
+            userEmailTextField.placeholder = "johnsmith@gmail.com"
+            userEmailTextField.keyboardType = .emailAddress
+        }
+        
+        let yesAction = UIAlertAction(title: "Send email", style: .default) {
+            UIAlertAction in
+            
+            if let alertTextField = alertController.textFields?.first, alertTextField.text != nil {
+
+                FIRAuth.auth()?.sendPasswordReset(withEmail: alertTextField.text!, completion: { (error) in
+                    if error != nil {
+                        self.createAlert(title: "Error", message: (error?.localizedDescription)!)
+                    }
+                    self.createAlert(title: "Success", message: "Sent password reset to: \(alertTextField.text)")
+                })
+                
+            }
+        }
+        
+        let noAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            //Do you No button Stuff here, like dismissAlertView
+        }
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func dismissPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

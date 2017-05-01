@@ -12,7 +12,7 @@ target 'Fitkeeper' do
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
 
-  pod 'SDWebImage'
+  pod 'RSKImageCropper'
 
 
 

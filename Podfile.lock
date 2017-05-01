@@ -51,9 +51,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - RSKImageCropper (1.6.1)
 
 DEPENDENCIES:
   - Firebase
@@ -61,7 +59,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleSignIn
-  - SDWebImage
+  - RSKImageCropper
 
 SPEC CHECKSUMS:
   Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
@@ -75,8 +73,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  RSKImageCropper: 0df8c99e77a8ea7ca7a8b83ef468556f31584254
 
-PODFILE CHECKSUM: d846be3007fce0c26fef4cc08fa1d64552da0933
+PODFILE CHECKSUM: db9bc9052f5e31a73258367e6747fc2c55b68887
 
 COCOAPODS: 1.2.0

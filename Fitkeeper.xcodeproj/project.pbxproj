@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49D6A2B11EB22A450016FCCE /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6A2B01EB22A450016FCCE /* Identifiers.swift */; };
+		7C17EBC81EB79243002575B0 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6DF751EB0A3BC005F3FE4 /* MeVC.swift */; };
 		7C9C22FB1EB5DB6D00D8C5D2 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */; };
 		7C9C23001EB5DB9B00D8C5D2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C22FF1EB5DB9B00D8C5D2 /* RoundButton.swift */; };
 		7C9C23021EB607C700D8C5D2 /* UserPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C23011EB607C700D8C5D2 /* UserPhotoImageView.swift */; };
@@ -18,7 +19,6 @@
 		7CD6DF6E1EB0A36D005F3FE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6DF6D1EB0A36D005F3FE4 /* GoogleService-Info.plist */; };
 		7CD6DF701EB0A392005F3FE4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6DF6F1EB0A392005F3FE4 /* WelcomeVC.swift */; };
 		7CD6DF721EB0A3A8005F3FE4 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6DF711EB0A3A8005F3FE4 /* LogInVC.swift */; };
-		7CD6DF761EB0A3BC005F3FE4 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6DF751EB0A3BC005F3FE4 /* MeVC.swift */; };
 		FB8749330DD0137DE5FDEF23 /* Pods_Fitkeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90C78045DAB69221EA0B0E1 /* Pods_Fitkeeper.framework */; };
 /* End PBXBuildFile section */
 
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CD6DF761EB0A3BC005F3FE4 /* MeVC.swift in Sources */,
+				7C17EBC81EB79243002575B0 /* MeVC.swift in Sources */,
 				7CD6DF5C1EB0A274005F3FE4 /* AppDelegate.swift in Sources */,
 				7C9C23021EB607C700D8C5D2 /* UserPhotoImageView.swift in Sources */,
 				7C9C23001EB5DB9B00D8C5D2 /* RoundButton.swift in Sources */,
