@@ -101,8 +101,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBAction func userHasAccountPressed(_ sender: Any) {
         performSegue(withIdentifier: SegueIdentifier.toLogInVC, sender: self)
     }
-
-    //Here is how you pass data between VC
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         

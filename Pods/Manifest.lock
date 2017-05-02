@@ -51,6 +51,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
+  - JTAppleCalendar (7.0.2)
   - RSKImageCropper (1.6.1)
 
 DEPENDENCIES:
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleSignIn
+  - JTAppleCalendar (~> 7.0)
   - RSKImageCropper
 
 SPEC CHECKSUMS:
@@ -73,8 +75,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  JTAppleCalendar: c14685634064ef67a68209548ff3443208af48a3
   RSKImageCropper: 0df8c99e77a8ea7ca7a8b83ef468556f31584254
 
-PODFILE CHECKSUM: db9bc9052f5e31a73258367e6747fc2c55b68887
+PODFILE CHECKSUM: 71a9272277380d80a73a71cedee9aa364a50911b
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

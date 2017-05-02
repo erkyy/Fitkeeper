@@ -4,6 +4,8 @@
 target 'Fitkeeper' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  pod 'JTAppleCalendar', '~> 7.0'
+
 
   # Pods for Fitkeeper
   pod 'Firebase'
@@ -13,8 +15,5 @@ target 'Fitkeeper' do
   pod 'GoogleSignIn'
 
   pod 'RSKImageCropper'
-
-
-
 
 end

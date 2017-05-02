@@ -14,6 +14,8 @@
 		7C9C22FB1EB5DB6D00D8C5D2 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */; };
 		7C9C23001EB5DB9B00D8C5D2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C22FF1EB5DB9B00D8C5D2 /* RoundButton.swift */; };
 		7C9C23021EB607C700D8C5D2 /* UserPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C23011EB607C700D8C5D2 /* UserPhotoImageView.swift */; };
+		7CD27D4A1EB916F2006C2228 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD27D491EB916F2006C2228 /* CalendarVC.swift */; };
+		7CD27D4E1EB91747006C2228 /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD27D4D1EB91747006C2228 /* WorkoutVC.swift */; };
 		7CD6DF5C1EB0A274005F3FE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD6DF5B1EB0A274005F3FE4 /* AppDelegate.swift */; };
 		7CD6DF611EB0A274005F3FE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6DF5F1EB0A274005F3FE4 /* Main.storyboard */; };
 		7CD6DF631EB0A274005F3FE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD6DF621EB0A274005F3FE4 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		7C9C22FF1EB5DB9B00D8C5D2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		7C9C23011EB607C700D8C5D2 /* UserPhotoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotoImageView.swift; sourceTree = "<group>"; };
 		7C9C23051EB615E800D8C5D2 /* Fitkeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fitkeeper-Bridging-Header.h"; sourceTree = "<group>"; };
+		7CD27D491EB916F2006C2228 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		7CD27D4D1EB91747006C2228 /* WorkoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutVC.swift; sourceTree = "<group>"; };
 		7CD6DF581EB0A274005F3FE4 /* Fitkeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitkeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD6DF5B1EB0A274005F3FE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CD6DF601EB0A274005F3FE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		7C6966CC1EB79E860090703D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7C9C23051EB615E800D8C5D2 /* Fitkeeper-Bridging-Header.h */,
+				49D6A2B01EB22A450016FCCE /* Identifiers.swift */,
 				7C6966CD1EB79E8D0090703D /* Extensions.swift */,
 			);
 			name = Helpers;
@@ -96,8 +102,30 @@
 		7C9C22FE1EB5DB7A00D8C5D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7CD27D4B1EB916FA006C2228 /* Login */,
+				7CD27D4C1EB91702006C2228 /* Tabs */,
+				7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7CD27D4B1EB916FA006C2228 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7CD6DF6F1EB0A392005F3FE4 /* WelcomeVC.swift */,
+				7CD6DF711EB0A3A8005F3FE4 /* LogInVC.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		7CD27D4C1EB91702006C2228 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				7CD27D491EB916F2006C2228 /* CalendarVC.swift */,
+				7CD6DF751EB0A3BC005F3FE4 /* MeVC.swift */,
+				7CD27D4D1EB91747006C2228 /* WorkoutVC.swift */,
+			);
+			name = Tabs;
 			sourceTree = "<group>";
 		};
 		7CD6DF4F1EB0A273005F3FE4 = {
@@ -126,12 +154,6 @@
 				7C9C22FD1EB5DB7500D8C5D2 /* View */,
 				7C9C22FE1EB5DB7A00D8C5D2 /* Controller */,
 				7CD6DF5B1EB0A274005F3FE4 /* AppDelegate.swift */,
-				49D6A2B01EB22A450016FCCE /* Identifiers.swift */,
-				7CD6DF6F1EB0A392005F3FE4 /* WelcomeVC.swift */,
-				7CD6DF711EB0A3A8005F3FE4 /* LogInVC.swift */,
-				7CD6DF751EB0A3BC005F3FE4 /* MeVC.swift */,
-				7C9C22FA1EB5DB6D00D8C5D2 /* SettingsTVC.swift */,
-				7C9C23051EB615E800D8C5D2 /* Fitkeeper-Bridging-Header.h */,
 				7CD6DF5F1EB0A274005F3FE4 /* Main.storyboard */,
 				7CD6DF621EB0A274005F3FE4 /* Assets.xcassets */,
 				7CD6DF641EB0A274005F3FE4 /* LaunchScreen.storyboard */,
@@ -265,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -277,6 +299,7 @@
 			files = (
 				7C17EBC81EB79243002575B0 /* MeVC.swift in Sources */,
 				7C6966CE1EB79E8D0090703D /* Extensions.swift in Sources */,
+				7CD27D4A1EB916F2006C2228 /* CalendarVC.swift in Sources */,
 				7CD6DF5C1EB0A274005F3FE4 /* AppDelegate.swift in Sources */,
 				7C9C23021EB607C700D8C5D2 /* UserPhotoImageView.swift in Sources */,
 				7C9C23001EB5DB9B00D8C5D2 /* RoundButton.swift in Sources */,
@@ -284,6 +307,7 @@
 				49D6A2B11EB22A450016FCCE /* Identifiers.swift in Sources */,
 				7C9C22FB1EB5DB6D00D8C5D2 /* SettingsTVC.swift in Sources */,
 				7CD6DF721EB0A3A8005F3FE4 /* LogInVC.swift in Sources */,
+				7CD27D4E1EB91747006C2228 /* WorkoutVC.swift in Sources */,
 				7C6966D01EB79EE80090703D /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

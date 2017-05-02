@@ -18,8 +18,8 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     @IBOutlet weak var changeProfilePhotoBtn: UIButton!
     @IBOutlet weak var userEmailTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var userPhotoTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var emailNotVerifiedLbl: UILabel!
     @IBOutlet weak var emailPopupTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailNotVerifiedLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -212,10 +212,6 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         self.present(changePhotoAlert, animated: true, completion: nil)
     }
     
-    @IBAction func deleteAccountPressed(_ sender: Any) {
-        deleteUserAlert()
-    }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -277,31 +273,9 @@ class MeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         }
     }
     
-    func deleteUser() {
-        FIRAuth.auth()?.currentUser?.delete(completion: { (error) in
-            if error != nil {
-                guard let errDescription = error?.localizedDescription else { return }
-                self.errorAlert(message: errDescription)
-                return
-            }
-            self.dismiss(animated: true, completion: nil)
-        })
-    }
-    
     func errorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func deleteUserAlert() {
-        let alert = UIAlertController(title: "Warning", message: "If you delete your account, unsaved progress will be lost!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Delete account", style: .destructive, handler: { (action) in
-            self.deleteUser()
-        }))
         self.present(alert, animated: true, completion: nil)
     }
     
