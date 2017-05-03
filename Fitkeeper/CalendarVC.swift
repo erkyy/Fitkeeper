@@ -17,6 +17,8 @@ class CalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var eggs = 15
+        
         setupCalendarView()
 
     }
